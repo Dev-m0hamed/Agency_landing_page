@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --color-red-400: hsl(7, 99%, 70%);
+  --color-yellow-500: hsl(51, 100%, 49%);
+  --color-green-800: hsl(167, 40%, 24%);
+  --color-blue-800: hsl(198, 62%, 26%);
+  --color-green-500: hsl(167, 34%, 41%);
+  --color-grey-950: hsl(212, 27%, 19%);
+  --color-grey-600: hsl(213, 9%, 39%);
+  --color-grey-550: hsl(232, 10%, 55%);
+  --color-grey-400: hsl(210, 4%, 67%);
+  --color-white: hsl(0, 100%, 100%);
+  --font-fraunces: "Fraunces", serif;
+}
+
+@layer base {
+  body {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    color: var(--color-grey-950);
+  }
+  p {
+    color: var(--color-grey-400);
+  }
+}
+
+@layer components {
+  .section-info {
+    @apply flex-1/2 py-16 px-7 lg:py-16 lg:px-12 sm:py-8 md:py-0 md:px-4 text-center lg:text-start space-y-8 sm:space-y-5 lg:space-y-8;
+  }
+  .a {
+    font-family: "Fraunces", serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translate(-50%);
+    width: calc(100% + 1rem);
+    height: .5rem;
+    border-radius: 12px;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  #links::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: 0px;
+    border-width: 2rem;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+  }
+}
